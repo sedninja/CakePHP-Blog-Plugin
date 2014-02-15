@@ -26,8 +26,8 @@ class BlogSetting extends AppModel {
    * Clears cache files after saving
    *
    */
-  public function afterSave($created) {
-    parent::afterSave($created);
+  public function afterSave($created, $options = array()) {
+    parent::afterSave($created,$options);
     Cache::delete($this->_cacheKey);
   }
 
